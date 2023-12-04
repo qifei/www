@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7S6KPBJWQ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7S6KPBJWQ3');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="favicon.svg" />
+  <title>l or I O or 0</title>
+  <style>
+    @import url(assets/firacode/fira_code.css);
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
+      min-height: 60vh;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .form {
+      background-color: #f1f1f1;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 720px;
+      min-width: 320px;
+      margin: 0 auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .input-group {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .input-group .form-control {
+      position: relative;
+      flex: 1 1 auto;
+      width: 1%;
+      min-width: 0;
+    }
+
+    .form-label {
+      display: inline-block;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #666;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .375rem .75rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.5;
+      color: #666;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      cursor: pointer;
+      user-select: none;
+      border: 0.8px solid #ddd;
+      border-radius: 0.25rem;
+      background-color: #fff;
+    }
+
+    .btn-on {
+      color: #666;
+      background-color: #ddd;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    .form h1 {
+      margin: 0 0 1rem;
+      padding: 0;
+      font-size: 2rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: 500;
+    }
+
+    .form .input-group {
+      gap: 0.5rem;
+    }
+
+    .output-line {
+      font-family: 'Fira Code', 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+      font-size: 2rem;
+      text-align: center;
+      margin: 2rem 1rem 0;
+    }
+    @media (min-width: 540px) {
+      body {
+        justify-content: center;
+      }
+    }
+  </style>
+  <script type="text/javascript">
+    function printText() {
+      const stringInput = document.querySelector("#stringInput").value;
+      const outputLine = document.querySelector("#outputLine");
+      outputLine.innerText = stringInput.trim();
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <form class="form">
+      <h1>l or I, O or 0, what the hell is it?</h1>
+      <p class="input-group">
+        <!-- <label for="stringInput" class="form-label">Enter to find out</label> -->
+        <input type="email" maxlength="64" value="" class="form-control" id="stringInput"
+          placeholder="Enter to see" />
+        <button type="button" class="btn btn-on" onclick="printText()">Reveal</button>
+      </p>
+    </form>
+    <p class="output-line" id="outputLine"></p>
+  </div>
+</body>
+
+</html>
