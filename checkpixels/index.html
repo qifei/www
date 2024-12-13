@@ -1,145 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Description" content="Find dead pixels or dead pixels on your LCD online in a minute. Simplicity of dead pixel detection is achieved with specially colored web pages." />
-<meta http-equiv="Keywords" content="dead pixels, dead subpixels, lcd check" />
-<title>液晶显示器坏点在线检测 Online LCD dead pixels detection</title>
-<style type="text/css">
-<!--
-body {
-  text-align:center;
-}
-#container {
-  position: relative;
-  width: 400px;
-  height: 300px;
-  margin: 0px auto;
-  border: 1px solid #000;
-}
-#container:-webkit-full-screen {
- width: 100%;
- height: 100%;
- border: none;
-}
-#container:-moz-full-screen {
- width: 100%;
- height: 100%;
- border: none;
-}
-#container:-ms-full-screen {
- width: 100%;
- height: 100%;
- border: none;
-}
-#container:-o-full-screen {
- width: 100%;
- height: 100%;
- border: none;
-}
-#container:full-screen {
- width: 100%;
- height: 100%;
- border: none;
-}
-.test {
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  display:none;
-}
-.test.red_1 {
-  background-image: url('images/red_1.gif');
-}
-.test.red_2 {
-  background-image: url('images/red_2.gif');
-}
-.test.green_1 {
-  background-image: url('images/green_1.gif');
-}
-.test.green_2 {
-  background-image: url('images/green_2.gif');
-}
-.test.blue_1 {
-  background-image: url('images/blue_1.gif');
-}
-.test.blue_2 {
-  background-image: url('images/blue_2.gif');
-}
-.test.black {
-  background-color:#000;
-}
--->
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Description" content="Find dead pixels or dead pixels on your LCD online in a minute. Simplicity of dead pixel detection is achieved with specially colored web pages." />
+  <meta http-equiv="Keywords" content="dead pixels, dead subpixels, lcd check" />
+  <title>液晶显示器坏点在线检测 Online LCD dead pixels detection</title>
+  <style type="text/css">
+  <!--
+  p {
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .container {
+    margin: 0 auto;
+    max-width: 1040px;
+    min-width: 540px;
+    text-align:center;
+  }
+  #screen {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 0px auto;
+    border: 1px solid #000;
+  }
+  #screen:-webkit-full-screen {
+   width: 100%;
+   height: 100%;
+   border: none;
+  }
+  #screen:-moz-full-screen {
+   width: 100%;
+   height: 100%;
+   border: none;
+  }
+  #screen:-ms-full-screen {
+   width: 100%;
+   height: 100%;
+   border: none;
+  }
+  #screen:-o-full-screen {
+   width: 100%;
+   height: 100%;
+   border: none;
+  }
+  #screen:full-screen {
+   width: 100%;
+   height: 100%;
+   border: none;
+  }
+  .test {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:none;
+  }
+  .test.red_1 {
+    background-image: url('images/red_1.gif');
+  }
+  .test.red_2 {
+    background-image: url('images/red_2.gif');
+  }
+  .test.green_1 {
+    background-image: url('images/green_1.gif');
+  }
+  .test.green_2 {
+    background-image: url('images/green_2.gif');
+  }
+  .test.blue_1 {
+    background-image: url('images/blue_1.gif');
+  }
+  .test.blue_2 {
+    background-image: url('images/blue_2.gif');
+  }
+  .test.black {
+    background-color:#000;
+  }
+  -->
+  </style>
 </head>
 <body>
-<p>本页专门用来检测液晶显示器坏点。点击鼠标左键进入到下一个测试，一共7个，最后一个是黑屏，用来检查屏幕亮点，按[Esc]键退出测试。<a href="javascript:void(0);" onclick="toggleFull();">点击这里进入全屏测试</a>。</p>
-<p>This page is specially colored for testing LCDs by detecting dead pixels. Look at the page, if there any dead subpixels, they will appear as black dots. If you see nothing, click left mouse button for next test. There are 7 tests, the last is black screen for finding glowing pixels. <a href="javascript:void(0);" onclick="toggleFull();">Click here to go fullscreen test</a>. Press [Esc] key to exit full screen mode.</p>
-<div id="container" onclick="changeTest();">
-  <div class="test red_1" id="t0"></div>
-  <div class="test red_2" id="t3"></div>
-  <div class="test green_1" id="t1"></div>
-  <div class="test green_2" id="t4"></div>
-  <div class="test blue_1" id="t2"></div>
-  <div class="test blue_2" id="t5"></div>
-  <div class="test black" id="t6"></div>
-</div>
-<script language="JavaScript" type="text/javascript">
-var test_idx = 6;
-function changeTest()
-{
-  var idx_old = test_idx;
-  test_idx = (test_idx + 1) % 7;
-  document.getElementById('t' + test_idx).style.display = 'block';
-  document.getElementById('t' + idx_old).style.display = 'none';
-}
-changeTest();
+  <div class="container">
+    <p>本页专门用来检测液晶显示器坏点。点击鼠标左键进入到下一个测试，一共7个，最后一个是黑屏，用来检查屏幕亮点，按[Esc]键退出测试。<a href="javascript:void(0);" onclick="toggleFull();">点击这里进入全屏测试</a>。</p>
+    <p>This page is specially colored for testing LCDs by detecting dead pixels. Look at the page, if there any dead subpixels, they will appear as black dots. If you see nothing, click left mouse button for next test. There are 7 tests, the last is black screen for finding glowing pixels. <a href="javascript:void(0);" onclick="toggleFull();">Click here to go fullscreen test</a>. Press [Esc] key to exit full screen mode.</p>
 
-var pfx = ["webkit", "moz", "ms", "o", ""];
-function RunPrefixMethod(obj, method) {
-  
-  var p = 0, m, t;
-  while (p < pfx.length && !obj[m]) {
-    m = method;
-    if (pfx[p] == "") {
-      m = m.substr(0,1).toLowerCase() + m.substr(1);
+    <div id="screen" onclick="changeTest();">
+      <div class="test red_1" id="t0"></div>
+      <div class="test red_2" id="t3"></div>
+      <div class="test green_1" id="t1"></div>
+      <div class="test green_2" id="t4"></div>
+      <div class="test blue_1" id="t2"></div>
+      <div class="test blue_2" id="t5"></div>
+      <div class="test black" id="t6"></div>
+    </div>
+
+    <p>The <a href="http://www.sitepoint.com/html5-full-screen-api/">HTML5 full screen API</a> makes <a href="http://checkpixels.com/">checkpixels.com</a> better.</p>
+  </div>
+
+  <script language="JavaScript" type="text/javascript">
+    var test_idx = 6;
+    function changeTest() {
+      var idx_old = test_idx;
+      test_idx = (test_idx + 1) % 7;
+      document.getElementById('t' + test_idx).style.display = 'block';
+      document.getElementById('t' + idx_old).style.display = 'none';
     }
-    m = pfx[p] + m;
-    t = typeof obj[m];
-    if (t != "undefined") {
-      pfx = [pfx[p]];
-      return (t == "function" ? obj[m]() : obj[m]);
+    changeTest();
+
+    var e = document.getElementById("screen");
+    function toggleFull() {
+      if (!document.fullscreenElement) {
+        e.requestFullscreen().catch((err) => {
+          alert(
+            `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`,
+          );
+        });
+      } else {
+        document.exitFullscreen();
+      }
     }
-    p++;
-  }
+  </script>
 
-}
-
-var e = document.getElementById("container");
-
-function toggleFull() {
-
-  if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
-    RunPrefixMethod(document, "CancelFullScreen");
-  }
-  else {
-    RunPrefixMethod(e, "RequestFullScreen");
-  }
-
-}
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1274130-3']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<p>The <a href="http://www.sitepoint.com/html5-full-screen-api/">HTML5 full screen API</a> makes <a href="http://checkpixels.com/">checkpixels.com</a> better.</p>
 </body>
 </html>
