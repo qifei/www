@@ -5,14 +5,15 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  font-size: 16px;
   background: #f5f7fa;
   color: #222;
 }
 
 .container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 h1 {
@@ -68,17 +69,32 @@ input[type="file"] {
   display: block;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
 .card {
   background: white;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  width: 100%;
 }
 
 .section-title {
-  font-size: 18px;
-  margin-bottom: 12px;
+  font-family: monospace;
+  font-size: 1rem;
+  color: green;
+}
+.section-title:first-child {
+  margin: 0 0 1.5rem;
+  color: #999;
+}
+.section-title:last-child {
+  margin: 1rem 0 0;
 }
 
 .info-row {
@@ -106,12 +122,14 @@ input[type="file"] {
 .hidden {
   display: none;
 }
-
 .preview-image {
+  margin: 0 0 1rem;
+}
+.preview-image > img {
   max-width: 220px;
   max-height: 220px;
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   border-radius: 12px;
   object-fit: cover;
   border: 1px solid #ddd;
@@ -119,11 +137,13 @@ input[type="file"] {
 
 .raw-box {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .raw-title {
-  font-weight: bold;
-  margin-bottom: 8px;
+  font-family: monospace;
+  font-size: 1rem;
+  margin: 1rem 0;
 }
 
 textarea {

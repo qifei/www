@@ -36,8 +36,8 @@ function createPreview(file, fileName) {
 
   return `
     <div class="card">
-      <div class="section-title">${fileName}</div>
-      <img src="${url}" alt="Photo Preview" class="preview-image">
+      <p class="preview-image"><img src="${url}" alt="Photo Preview"></p>
+      <p class="section-title">${fileName}</p>
     </div>
   `;
 }
@@ -46,10 +46,9 @@ function buildRawJson(tags, index, fileName, file) {
   const url = URL.createObjectURL(file);
 
   return `
-    <div class="raw-box">
-      <img src="${url}" alt="Photo Preview" class="preview-image">
-
-      <div class="raw-title">${fileName} Raw JSON</div>
+    <div class="raw-box card">
+      <p class="preview-image"><img src="${url}" alt="Photo Preview"></p>
+      <p class="raw-title">${fileName} - Raw JSON</p>
       <textarea readonly>${JSON.stringify(tags, null, 2)}</textarea>
     </div>
   `;
@@ -75,7 +74,7 @@ function buildCard(file, tags, index, fileName) {
 
   return `
     <div class="card">
-      <div class="section-title">${fileName}</div>
+      <p class="section-title" disabled="disabled">${fileName}</p>
 
       <div class="info-row"><strong>Date Taken:</strong> ${date}</div>
       <div class="info-row"><strong>Dimensions:</strong> ${width} × ${height}</div>
