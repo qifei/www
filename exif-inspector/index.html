@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline EXIF Inspector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Offline EXIF Inspector</h1>
+    <p class="subtitle">Private • Fast</p>
+
+    <div class="upload-box">
+      <label for="photoInput" class="upload-label">
+        Select 1 or 2 Photos
+      </label>
+      <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        multiple
+      >
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="formatted">Formatted View</button>
+      <button class="tab-btn" data-tab="raw">Raw JSON</button>
+    </div>
+
+    <div id="formatted" class="tab-content active">
+      <div id="previewContainer"></div>
+      <div id="result"></div>
+    </div>
+
+    <div id="raw" class="tab-content">
+      <div id="rawJsonContainer"></div>
+    </div>
+  </div>
+
+  <!-- Replace with local file for full offline mode -->
+  <script src="exif-reader.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
