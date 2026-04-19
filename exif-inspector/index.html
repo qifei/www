@@ -14,8 +14,10 @@
 
     <div class="upload-box">
       <label for="photoInput" class="upload-label">
-        Select 1 or 2 Photos
+        Select Photos
       </label>
+      <!-- <label class="reset-button" id="btnReset">Reset</label> -->
+      <p>or drag and drop a file anywhere on the page.</p>
       <input
         type="file"
         id="photoInput"
@@ -39,8 +41,16 @@
     </div>
   </div>
 
+  <div class="pageDropOverlay" id="pageDropOverlay" aria-hidden="false">
+    <dialog class="pageDropCard" id="pageDropCard">
+      <strong>Drop file anywhere</strong>
+      <span>Metadata is inspected locally in your browser and the file stays on your device.</span>
+    </dialog>
+  </div>
+
   <!-- Replace with local file for full offline mode -->
   <script src="exif-reader.min.js"></script>
+  <script src="page-file-drop.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

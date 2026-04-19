@@ -42,6 +42,14 @@ input[type="file"] {
   display: none;
 }
 
+.reset-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .tabs {
   display: flex;
   gap: 10px;
@@ -51,7 +59,7 @@ input[type="file"] {
 .tab-btn {
   padding: 10px 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
   cursor: pointer;
   background: #ddd;
 }
@@ -154,4 +162,51 @@ textarea {
   border: 1px solid #ccc;
   resize: vertical;
   font-family: monospace;
+}
+
+/* page drop file */
+
+.pageDropOverlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(244, 239, 231, .78);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .16s ease;
+  z-index: 1000;
+}
+
+body.fileDropActive .pageDropOverlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pageDropCard {
+  max-width: 25rem;
+  width: min(100%, 420px);
+  border-radius: 1rem;
+  border: 1px solid rgba(88, 88, 88, .22);
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 24px 60px rgba(102, 93, 75, .18);
+  padding: 22px 20px;
+  text-align: center;
+  visibility: visible;
+}
+
+.pageDropCard strong {
+  display: block;
+  font-size: 20px;
+  letter-spacing: -.02em;
+}
+
+.pageDropCard span {
+  display: block;
+  margin-top: 8px;
+  color: var(--inkDim);
+  line-height: 1.45;
+  font-size: 14px;
 }

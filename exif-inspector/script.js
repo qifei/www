@@ -1,3 +1,4 @@
+// const btnReset = document.getElementById("btnReset");
 const photoInput = document.getElementById("photoInput");
 const result = document.getElementById("result");
 const previewContainer = document.getElementById("previewContainer");
@@ -109,12 +110,22 @@ window.toggleMore = function(index) {
   box.classList.toggle("hidden");
 };
 
-photoInput.addEventListener("change", async (event) => {
-  const files = Array.from(event.target.files).slice(0, 2);
-
+function resetAll() {
   previewContainer.innerHTML = "";
   result.innerHTML = "";
   rawJsonContainer.innerHTML = "";
+}
+
+// btnReset.addEventListener('click',resetAll);
+
+async function readFiles(event) {
+  const droped = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files;
+  const selected = event.target && event.target.files && event.target.files;
+  const fileArray = droped || selected;
+
+  const files = Array.from(fileArray).slice(0, 2);
+
+  resetAll();
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
@@ -130,7 +141,9 @@ photoInput.addEventListener("change", async (event) => {
       result.innerHTML += `<div class="card">Failed to read metadata for ${file.name}</div>`;
     }
   }
-});
+}
+
+photoInput.addEventListener("change", readFiles);
 
 for (const button of tabButtons) {
   button.addEventListener("click", () => {
@@ -141,3 +154,10 @@ for (const button of tabButtons) {
     document.getElementById(button.dataset.tab).classList.add("active");
   });
 }
+
+["dragenter","dragover","dragleave","drop"].forEach(function(en){
+  window.addEventListener(en,function(e){e.preventDefault()},{passive:!1}),
+  document.addEventListener(en,function(e){e.preventDefault()},{passive:!1})
+});
+
+window.addEventListener('drop', readFiles);
